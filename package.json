@@ -1,0 +1,55 @@
+{
+  "name": "electron-react-typescript-boilerplate",
+  "main": "./start.js",
+  "version": "0.1.0",
+  "homepage": "./",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "@types/jest": "^24.9.1",
+    "@types/node": "^12.12.44",
+    "@types/react": "^16.9.35",
+    "@types/react-dom": "^16.9.8",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.1",
+    "typescript": "^3.7.5"
+  },
+  "build": {
+    "appId": "insert.your.app.id",
+    "directories": {
+      "buildResources": "assets"
+    },
+    "extends": null,
+    "win": {
+      "icon": "public/logo512.png"
+    },
+    "mac": {
+      "category": "your.app.category.type",
+      "icon": "public/logo512.png"
+    }
+  },
+  "scripts": {
+    "electron": "cross-env ENV=development electron .",
+    "electron-build": "cross-env ENV=production electron-builder",
+    "start": "cross-env BROWSER=none npm run react-start",
+    "react-start": "react-scripts start",
+    "build": "react-scripts build",
+    "react-test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "devDependencies": {
+    "electron": "^9.0.2",
+    "electron-builder": "^22.7.0",
+    "concurrently": "^5.2.0",
+    "cross-env": "^7.0.2",
+    "electron-is-dev": "^1.2.0",
+    "electron-reload": "^1.5.0",
+    "nodemon": "^2.0.4"
+  }
+}
