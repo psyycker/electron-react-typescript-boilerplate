@@ -14,11 +14,13 @@ function createWindow() {
     },
   })
 
-  mainWindow.loadURL(
-    process.env.ENV === 'development'
-      ? 'http://localhost:3000'
-      : `file://${path.join(__dirname, 'build/index.html')}`,
-  )
+  setTimeout(() => {
+    mainWindow.loadURL(
+      process.env.ENV === 'development'
+        ? 'http://localhost:3000'
+        : `file://${path.join(__dirname, 'build/index.html')}`,
+    )
+  }, process.env.ENV === 'development' ? 5000 : 0)
 
   mainWindow.on('closed', () => {
     mainWindow = null

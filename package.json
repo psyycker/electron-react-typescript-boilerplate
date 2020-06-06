@@ -35,8 +35,9 @@
     "electron": "cross-env ENV=development electron .",
     "electron-build": "cross-env ENV=production electron-builder",
     "start": "cross-env BROWSER=none npm run react-start",
+    "start-dev": "concurrently --kill-others 'npm run start' 'npm run electron'",
     "react-start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && npm run electron-build",
     "react-test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
@@ -51,5 +52,17 @@
     "electron-is-dev": "^1.2.0",
     "electron-reload": "^1.5.0",
     "nodemon": "^2.0.4"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
